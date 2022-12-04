@@ -1,0 +1,15 @@
+.content{
+    background-color:#e0ffff;
+    border: 1px solid black;
+    min-height:70vh;
+    text-align:center;
+     color:	#ffa07a;
+}
+
+input:focus{
+    outline:none;
+}
+div.container
+{
+ text-align:center;
+}

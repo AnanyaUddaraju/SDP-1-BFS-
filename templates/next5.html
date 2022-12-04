@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}LOAN{% endblock %}
+
+
+{% block body %}
+<style>
+	.alert {
+	  padding: 10px;
+	  background-color: rgb(107, 228, 255);
+	  color: white;
+	}
+	
+	.closebtn {
+	  margin-left: 15px;
+	  color: white;
+	  font-weight: bold;
+	  float: right;
+	  font-size: 20px;
+	  line-height: 20px;
+	  cursor: pointer;
+	  transition: 0.3s;
+	}
+	
+	.closebtn:hover {
+	  color: black;
+	}
+    .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+    </style>
+    <body>
+          <p> <strong> THE AMOUNT YOU REQUIRE:</strong></p>
+<input type="number" name="a" id="a" />
+<button onclick="myFunction()">Submit</button>
+<p id="demo"></p>
+<br>
+<br>
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong>Upload neccessary files regarding your loan taken</strong> 
+</div>
+<div class="upload-btn-wrapper">
+  <button class="btn">Upload a file</button>
+  <input type="file" name="myfile" />
+</div>
+<div class="upload-btn-wrapper">
+  <button class="btn">Upload a file</button>
+  <input type="file" name="myfile" />
+</div>
+<div class="upload-btn-wrapper">
+  <button class="btn">Upload a file</button>
+  <input type="file" name="myfile" />
+</div>
+<script>
+function myFunction() {
+  var a = document.getElementById("a").value;
+  var adaSpots;
+  if ( a>=100000 && a<=800000 ) {
+  
+    adaSpots = "You will be credited soon after verifying documents and  interest amount is "+a*0.135;
+
+  } 
+  else if(a==0)
+  {
+    adaSpots ="minimum amount is 100000";
+  }
+  else {
+    adaSpots = "You are exceeding the limit";
+  }
+  document.getElementById("demo").innerHTML = adaSpots;
+}
+</script>
+          
+    </body>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+
+{% block body %}
+<style>
+.emoji_checkbox .smileys input[type="radio"] {
+
+  width: 30px;
+	 height: 50px;
+	 border: none;
+	 cursor: pointer;
+	 transition: border 0.2s ease;
+	 margin: 0 5px;
+	 transition: all 0.2s ease;
+	 opacity: 0.3;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .emoji_checkbox .smileys input[type="radio"]:hover, .emoji_checkbox .smileys input[type="radio"]:checked {
+	 opacity: 1;
+	 border: 1px solid #eee;
+	 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	 border-radius: 12px;
+}
+ .emoji_checkbox .smileys input[type="radio"]:focus {
+	 outline: 0;
+}
+ .emoji_checkbox .smileys input[type="radio"].happy::before {
+	 content: "😃";
+	 font-size: 36px;
+}
+ .emoji_checkbox .smileys input[type="radio"].neutral::before {
+	 content: "😐";
+	 font-size: 36px;
+}
+ .emoji_checkbox .smileys input[type="radio"].sad::before {
+	 content: "🙁";
+	 font-size: 36px;
+}
+</style>
+<body>
+  <div class="flex items-center justify-center bg-gray-100 text-gray-600 p-3 h-screen">
+    <div class="shadow-lg bg-white lg:w-2/5 rounded-lg border border-gray-200">
+        <div class="px-4 py-6 bg-blue-50 rounded-t-lg">
+          <div class="text-2xl font-semibold">Send us your feedback!</div>
+          <div class="mt-3">Do you have any suggestion or found a bug? Do let us know your feedback.</div>
+        </div>
+        <div class="px-4 py-6">
+          <form class="">
+            <div class="text-lg font-semibold">How was your experience?</div>
+            <div class="mt-2 emoji_checkbox">
+              <ul class="flex gap-7 smileys">
+                <input type="radio" name="smiley" value="sad" class="sad">
+                <input type="radio" name="smiley" value="neutral" class="neutral">
+                <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+              </ul>
+            </div>
+            <div class="mt-4">
+              <textarea class="w-full rounded shadow-sm mt-5 md:mt-0 outline-none p-3 border border-gray-200 focus:border-primary placeholder-gray-300" rows="4" placeholder="Describe your experience here."></textarea>
+            </div>
+            <div class="my-5" >
+              <button class="bg-blue-600 text-white text-base px-6 py-2 mx-auto text-center rounded-md cursor-pointer block max-w-max shadow-md" type="submit" style="color:blue ;"><strong> Feedback</strong></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
+
+
+{% endblock %}

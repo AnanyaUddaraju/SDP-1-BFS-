@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<style>
+	/*add full-width input fields*/
+	
+	input[type=text],
+	input[type=password],
+  input[type=email] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 2px solid #ccc;
+		box-sizing: border-box;
+	}
+	/* set a style for all buttons*/
+	
+	button {
+		background-color: Green;
+		color: white;
+		padding: 15px 20px;
+		margin: 8px 0;
+		cursor: pointer;
+		width: 100%;
+	}
+	/*set styles for the cancel button*/
+	
+	.cancelbtn {
+		padding: 15px 20px;
+		background-color: #FF2E00;
+	}
+	/*float cancel and signup buttons and add an equal width*/
+	
+	.cancelbtn,
+	.signupbtn {
+		float: left;
+		width: 50%;
+	}
+	/*add padding to container elements*/
+	
+	.container {
+		padding: 16px;
+	}
+	/*clear floats*/
+	
+	.clearfix::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+	/*styles for cancel button and signup button
+	on extra small screens*/
+	
+	@media screen and (max-width: 300px) {
+		.cancelbtn,
+		.signupbtn {
+			width: 100%;
+		}
+	}
+</style>
+
+<body>
+  <div style="background-color:rgb(114, 24, 128) ;">
+    <h2 align="center" style="color:#e7e2ed;;">SAM BANKING AND FINANCE SYSTEMS</h2>
+     <h2 align="center" style="color:#9f9ba4;;">Register Page</h2>
+  </div>
+	<!--Step 1:Adding HTML-->
+	<form action="/Register" method="post">
+    {% csrf_token %}
+		<div class="container">
+			<label><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="username" required>
+
+			<label><b>E-Mail</b></label>
+			<input type="email" placeholder="Enter Email" name="email" required>
+
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password" required>
+			<input type="checkbox" checked="checked"> Remember me
+			<p>To create an account you have to agree our <a href="#">Terms & Privacy</a>.</p>
+
+			<div class="clearfix">
+				<button type="button" class="cancelbtn"><a href="/">Cancel</a></button>
+				<button type="submit" class="signupbtn">Sign Up</button>
+			</div>
+		</div>
+	</form>
+
+</body>
+
+</html>
+
+
